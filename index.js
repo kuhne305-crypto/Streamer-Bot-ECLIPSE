@@ -1,3 +1,4 @@
+import { voltStart } from './volt-status.cjs'; // Status an VoltStudio.work
 import {
   Client,
   GatewayIntentBits,
@@ -40,6 +41,7 @@ const streamers = [
 ].slice(0, 100); // Twitch erlaubt max. 100 pro Anfrage
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+voltStart(client);
 
 // ---------- Twitch Auth ----------
 let token = null;
